@@ -1,6 +1,19 @@
 import type { Metadata } from "next";
+import { Libre_Bodoni, Public_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+
+const displayFont = Libre_Bodoni({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["500", "600", "700"],
+});
+
+const bodyFont = Public_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Walltap Garage | Premium JDM and Euro Imports",
@@ -15,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${displayFont.variable} ${bodyFont.variable}`}>
         {children}
         <Analytics />
       </body>

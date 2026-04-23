@@ -1,4 +1,5 @@
 import { Reveal } from "../components/reveal";
+import { SectionNav } from "../components/section-nav";
 
 const metrics = [
   {
@@ -72,12 +73,7 @@ export default function Home() {
             <span className="brand-mark" />
             <span>Walltap Garage</span>
           </a>
-          <div className="nav-links">
-            <a href="#services">Services</a>
-            <a href="#inventory">Inventory</a>
-            <a href="#process">Process</a>
-            <a href="#contact">Contact</a>
-          </div>
+          <SectionNav />
         </nav>
 
         <div className="hero-grid">
@@ -143,6 +139,7 @@ export default function Home() {
           <Reveal className="section-head" direction="up">
             <div>
               <p className="eyebrow">What Walltap Does</p>
+              <p className="chapter-label">Chapter 01</p>
               <h2>A sharper alternative to generic import listings.</h2>
             </div>
           </Reveal>
@@ -175,6 +172,7 @@ export default function Home() {
           <Reveal className="section-head split-head" direction="up">
             <div>
               <p className="eyebrow">Inventory Direction</p>
+              <p className="chapter-label">Chapter 02</p>
               <h2>Cars with actual taste behind them.</h2>
             </div>
             <p className="section-note">
@@ -223,6 +221,7 @@ export default function Home() {
           <Reveal className="section-head process-head" direction="up">
             <div>
               <p className="eyebrow">Process</p>
+              <p className="chapter-label">Chapter 03</p>
               <h2>Built to feel direct and informed, not sales-heavy.</h2>
             </div>
             <p className="section-note">
@@ -252,6 +251,7 @@ export default function Home() {
           <Reveal className="founder-card" direction="right">
             <div>
               <p className="eyebrow">About the Brand</p>
+              <p className="chapter-label">Chapter 04</p>
               <h2>Curated imports for people who know what they are looking at.</h2>
               <p>
                 Founded by Andre Iancu, Walltap Garage is built around a simple
@@ -268,6 +268,7 @@ export default function Home() {
           <Reveal className="cta-card" direction="up">
             <div>
               <p className="eyebrow">Get in Touch</p>
+              <p className="chapter-label">Final Call</p>
               <h2>Ready to source your next car?</h2>
             </div>
             <div className="cta-copy">
