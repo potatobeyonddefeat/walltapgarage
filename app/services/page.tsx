@@ -20,7 +20,7 @@ export default function ServicesPage() {
 
           <div className="feature-grid feature-grid-full">
             {services.map((service, index) => (
-              <article className="feature-card" key={service.title}>
+              <article className="feature-card" id={service.id} key={service.title}>
                 <p className="card-index">0{index + 1}</p>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>

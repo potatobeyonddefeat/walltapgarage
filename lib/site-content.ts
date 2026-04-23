@@ -6,6 +6,49 @@ export const navItems = [
   { href: "/contact", label: "Contact" },
 ];
 
+export const companyDetails = {
+  phoneDisplay: "+1 (281) 745-8884",
+  phoneHref: "tel:+12817458884",
+  email: "iancuandre@yahoo.com",
+  emailHref: "mailto:iancuandre@yahoo.com",
+  location: "Houston, TX",
+  mission: "Premium JDM and European imports for serious enthusiasts.",
+  instagramHref: "https://www.instagram.com/",
+  facebookHref: "https://www.facebook.com/",
+};
+
+export const footerColumns = [
+  {
+    title: "Inventory",
+    links: [
+      { href: "/inventory?category=jdm", label: "JDM Imports" },
+      { href: "/inventory?category=european", label: "European Imports" },
+      { href: "/inventory?category=new-arrivals", label: "New Arrivals" },
+    ],
+  },
+  {
+    title: "Services",
+    links: [
+      { href: "/services#sourcing", label: "Sourcing" },
+      { href: "/services#transport", label: "Transport" },
+      { href: "/services#financing", label: "Financing" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { href: "/about", label: "About Us" },
+      { href: "/contact", label: "Contact" },
+      { href: "/faq", label: "FAQ" },
+    ],
+  },
+];
+
+export const utilityLinks = [
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/terms-of-service", label: "Terms of Service" },
+];
+
 export const inventoryVehicles = [
   {
     year: "1998",
@@ -65,18 +108,21 @@ export const inventoryVehicles = [
 
 export const services = [
   {
+    id: "sourcing",
     title: "Vehicle Sourcing",
     description:
       "Identify the right chassis, trim, condition, and purchase path before money moves.",
   },
   {
-    title: "Import Coordination",
+    id: "transport",
+    title: "Transport Coordination",
     description:
       "Handle auction logistics, shipping, customs, and arrival planning with a clear timeline.",
   },
   {
-    title: "Viewing and Delivery",
+    id: "financing",
+    title: "Financing Guidance",
     description:
-      "Help buyers review available inventory, confirm details, and arrange final handoff.",
+      "Help buyers understand next-step financing conversations alongside inventory review and delivery planning.",
   },
 ];
