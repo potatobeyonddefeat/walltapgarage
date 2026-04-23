@@ -11,6 +11,7 @@ const links = [
 
 export function SectionNav() {
   const [active, setActive] = useState<string>("");
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const sections = links
@@ -38,17 +39,55 @@ export function SectionNav() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const close = () => setOpen(false);
+    window.addEventListener("hashchange", close);
+
+    return () => window.removeEventListener("hashchange", close);
+  }, []);
+
   return (
-    <div className="nav-links" aria-label="Section navigation">
-      {links.map((link) => (
-        <a
-          key={link.id}
-          className={active === link.id ? "is-active" : ""}
-          href={link.href}
-        >
-          {link.label}
-        </a>
-      ))}
+    <div className="nav-shell">
+      <div className="nav-links" aria-label="Section navigation">
+        {links.map((link) => (
+          <a
+            key={link.id}
+            className={active === link.id ? "is-active" : ""}
+            href={link.href}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <button
+        aria-controls="mobile-navigation"
+        aria-expanded={open}
+        className="nav-toggle"
+        onClick={() => setOpen((value) => !value)}
+        type="button"
+      >
+        Menu
+      </button>
+
+      <div
+        className={`mobile-nav ${open ? "is-open" : ""}`}
+        id="mobile-navigation"
+      >
+        <div className="mobile-nav-frame">
+          <p className="mobile-nav-kicker">Navigate</p>
+          {links.map((link) => (
+            <a
+              key={link.id}
+              className={active === link.id ? "is-active" : ""}
+              href={link.href}
+              onClick={() => setOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
