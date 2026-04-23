@@ -707,9 +707,15 @@ button:focus-visible {
   .topbar {
     align-items: stretch;
     flex-direction: column;
-    top: 8px;
+    position: relative;
+    top: auto;
     gap: 12px;
     padding: 12px;
+  }
+
+  .brand {
+    font-size: 0.84rem;
+    letter-spacing: 0.14em;
   }
 
   .nav-links {
@@ -732,57 +738,105 @@ button:focus-visible {
 
   .hero-grid {
     gap: 18px;
-    padding: 22px 0 20px;
+    padding: 18px 0 12px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 14px 14px 18px;
+    background-position: 62% center;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .brand-lockup {
+    margin-bottom: 8px;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
   }
 
   h1 {
-    max-width: 11ch;
-    font-size: clamp(3rem, 16vw, 4.5rem);
-    line-height: 0.95;
+    max-width: 9.5ch;
+    font-size: clamp(2.6rem, 13vw, 3.75rem);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
   }
 
   h2 {
     max-width: 100%;
-    font-size: clamp(2.1rem, 10vw, 3.1rem);
-    line-height: 0.96;
+    font-size: clamp(1.9rem, 9vw, 2.7rem);
+    line-height: 1;
+    letter-spacing: -0.015em;
   }
 
   h3 {
-    font-size: 1.45rem;
+    font-size: 1.25rem;
+    line-height: 1.05;
   }
 
   .eyebrow,
   .chapter-label {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
   }
 
   .lede,
   .feature-card p,
-  .inventory-card p,
+  .inventory-copy p,
+  .inventory-list li,
   .process-step p,
   .founder-card p,
   .section-note,
   .cta-copy p,
   .metric-copy,
-  .signal-value {
-    font-size: 0.98rem;
-    line-height: 1.65;
+  .signal-value,
+  .feature-intro-note {
+    font-size: 0.94rem;
+    line-height: 1.58;
+  }
+
+  .feature-intro-copy,
+  .hero-media-quote {
+    text-wrap: pretty;
   }
 
   .hero-actions,
   .cta-actions {
     gap: 10px;
-    margin-top: 22px;
+    margin-top: 18px;
   }
 
   .button {
     width: 100%;
     min-height: 48px;
     padding: 0.9rem 1rem;
+    font-size: 0.92rem;
   }
 
   .hero-media-frame {
-    min-height: 300px;
+    min-height: 240px;
+  }
+
+  .hero-media-copy {
+    inset: auto 14px 14px 14px;
+  }
+
+  .hero-media-quote {
+    max-width: 12ch;
+    font-size: clamp(1.55rem, 7vw, 2.2rem);
+    line-height: 0.98;
+  }
+
+  .hero-panel-footer {
+    gap: 8px;
+    padding-top: 10px;
+  }
+
+  .hero-panel-footer span {
+    font-size: 0.7rem;
+    padding: 0.45rem 0.6rem;
   }
 
   .signal-card,
@@ -805,17 +859,42 @@ button:focus-visible {
     padding: 0 0 14px;
   }
 
+  .inventory-editorial {
+    gap: 18px;
+  }
+
   .inventory-gallery > div {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 180px);
+    grid-template-rows: repeat(3, 150px);
+    gap: 12px;
   }
 
   .gallery-markii {
     grid-row: auto;
   }
 
+  .gallery-tile span {
+    left: 12px;
+    bottom: 12px;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
+
+  .inventory-copy {
+    padding: 0;
+  }
+
+  .inventory-list {
+    margin-top: 16px;
+  }
+
+  .inventory-list li {
+    padding: 10px 0;
+  }
+
   .metrics-strip {
     gap: 10px;
+    margin-top: 8px;
   }
 
   .metrics-strip > div {
@@ -824,6 +903,10 @@ button:focus-visible {
 
   .section {
     padding: 16px;
+  }
+
+  .section-head {
+    margin-bottom: 18px;
   }
 
   .process-step {
