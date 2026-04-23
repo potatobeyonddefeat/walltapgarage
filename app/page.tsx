@@ -79,6 +79,21 @@ const inventoryGallery = [
   },
 ];
 
+const featuredSpecs = [
+  {
+    label: "Vehicle Types",
+    value: "Silvias, Chasers, Supras, Skylines, NSXs",
+  },
+  {
+    label: "Markets",
+    value: "Japan auction sourcing and select Euro inventory",
+  },
+  {
+    label: "Support",
+    value: "Sourcing, shipping, import coordination, handoff",
+  },
+];
+
 export default function Home() {
   return (
     <div className="page-shell">
@@ -107,11 +122,11 @@ export default function Home() {
                 finish.
               </p>
               <div className="hero-actions">
-                <a className="button button-primary" href="#contact">
-                  Start a Sourcing Request
-                </a>
-                <a className="button button-secondary" href="#inventory">
+                <a className="button button-primary" href="#inventory">
                   Browse Inventory
+                </a>
+                <a className="button button-secondary" href="#contact">
+                  Start Your Import
                 </a>
               </div>
             </section>
@@ -119,14 +134,14 @@ export default function Home() {
 
           <Reveal className="hero-media" direction="left" delay={120}>
             <aside>
-              <div className="hero-media-frame">
-                <div className="hero-media-copy">
-                  <p className="panel-label">Current Focus</p>
-                  <p className="hero-media-quote">
-                    Importer taste, transparent process, cars worth waiting for.
-                  </p>
-                </div>
-              </div>
+          <div className="hero-media-frame">
+            <div className="hero-media-copy">
+              <p className="panel-label">Current Focus</p>
+              <p className="hero-media-quote">
+                Premium vehicles ready to own or source.
+              </p>
+            </div>
+          </div>
               <div className="hero-panel-footer">
                 <span>Premium sourcing</span>
                 <span>Import logistics</span>
@@ -151,7 +166,7 @@ export default function Home() {
           <Reveal className="section-head" direction="up">
             <div>
               <p className="eyebrow">What Walltap Does</p>
-              <h2>A sharper alternative to generic import listings.</h2>
+              <h2>A cleaner way to buy premium JDM and Euro vehicles.</h2>
             </div>
           </Reveal>
           <div className="feature-grid">
@@ -189,12 +204,12 @@ export default function Home() {
           <Reveal className="section-head split-head" direction="up">
             <div>
               <p className="eyebrow">Inventory Direction</p>
-              <h2>Cars with actual taste behind them.</h2>
+              <h2>Premium vehicles ready to own.</h2>
             </div>
             <p className="section-note">
-              The brand is not "cheap imports." It is premium Japanese and
-              European vehicles for buyers who care about the right spec, the
-              right look, and the right process.
+              Browse curated imports or contact Walltap to source something
+              specific. The process is built for buyers who want clarity on
+              vehicle condition, provenance, and next steps.
             </p>
           </Reveal>
           <div className="inventory-editorial">
@@ -203,14 +218,25 @@ export default function Home() {
                 <p className="inventory-tag">Featured Types</p>
                 <h3>Silvias, Chasers, Supras, Skylines, and standout Euros.</h3>
                 <p>
-                  Walltap focuses on enthusiast cars with identity, not anonymous
-                  commuter inventory. The selection should feel narrow on purpose.
+                  Walltap focuses on enthusiast cars with identity, backed by a
+                  process that makes sourcing and buying easier to understand.
                 </p>
-                <ul className="inventory-list">
-                  <li>Low-volume sourcing over crowded listings</li>
-                  <li>Condition, authenticity, and visual presence first</li>
-                  <li>Inventory chosen for people who actually know the chassis</li>
-                </ul>
+                <div className="spec-grid">
+                  {featuredSpecs.map((spec) => (
+                    <div className="spec-item" key={spec.label}>
+                      <p className="spec-label">{spec.label}</p>
+                      <p className="spec-value">{spec.value}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="inventory-actions">
+                  <a className="button button-primary" href="https://walltapgarage.com/">
+                    View Inventory
+                  </a>
+                  <a className="button button-secondary" href="#contact">
+                    Schedule a Viewing
+                  </a>
+                </div>
               </article>
             </Reveal>
             <Reveal className="inventory-gallery" direction="up">
@@ -228,12 +254,12 @@ export default function Home() {
         <section className="section" id="process">
           <Reveal className="section-head process-head" direction="up">
             <div>
-              <p className="eyebrow">Process</p>
-              <h2>Built to feel direct and informed, not sales-heavy.</h2>
+              <p className="eyebrow">Buying Process</p>
+              <h2>Direct, transparent, and built for buyers.</h2>
             </div>
             <p className="section-note">
-              Scroll progression matters here. The process should read like a
-              controlled sequence, not four matching boxes dropped into a grid.
+              From first inquiry to final delivery, each step is structured so
+              you know what happens next and what to expect.
             </p>
           </Reveal>
           <div className="process-grid">
@@ -254,17 +280,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section founder-section">
+        <section className="section founder-section" id="about">
           <Reveal className="founder-card" direction="right">
             <div>
               <p className="eyebrow">About the Brand</p>
-              <h2>Curated imports for people who know what they are looking at.</h2>
+              <h2>Curated JDM and Euro imports for serious enthusiasts.</h2>
               <p>
-                Founded by Andre Iancu, Walltap Garage is built around a simple
-                position: enthusiasts deserve a sourcing process that feels sharp,
-                transparent, and aligned with real car culture. That means fewer
-                filler listings, better taste, and more attention on the details
-                that actually matter.
+                Founded by Andre Iancu, Walltap Garage sources, imports, and
+                resells premium Japanese and European vehicles for buyers who
+                care about quality, style, and a straightforward process.
               </p>
             </div>
           </Reveal>
@@ -273,29 +297,36 @@ export default function Home() {
         <section className="section cta-section" id="contact">
           <Reveal className="cta-card" direction="up">
             <div>
-              <p className="eyebrow">Get in Touch</p>
-              <h2>Ready to source your next car?</h2>
+              <p className="eyebrow">Contact</p>
+              <h2>Ready to find your next vehicle?</h2>
             </div>
             <div className="cta-copy">
               <p>
-                Use this as the lead-in for a contact form, inquiry flow, or
-                direct outreach. It is already structured to support a customer
-                buildout.
+                Contact Walltap Garage to ask about current inventory, discuss a
+                sourcing request, or schedule a viewing.
               </p>
               <div className="cta-actions">
-                <a className="button button-primary" href="mailto:hello@walltapgarage.com">
-                  Email Walltap
+                <a className="button button-primary" href="https://walltapgarage.com/contact">
+                  Contact Us
                 </a>
-                <a
-                  className="button button-secondary"
-                  href="https://walltapgarage.com/contact"
-                >
-                  Current Contact Page
+                <a className="button button-secondary" href="https://walltapgarage.com/">
+                  View Inventory
                 </a>
               </div>
             </div>
           </Reveal>
         </section>
+
+        <footer className="site-footer">
+          <div className="footer-brand">Walltap Garage</div>
+          <div className="footer-links">
+            <a href="#top">Home</a>
+            <a href="#inventory">Inventory</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <p className="footer-meta">© 2026 Walltap Garage LLC. All rights reserved.</p>
+        </footer>
       </main>
     </div>
   );
