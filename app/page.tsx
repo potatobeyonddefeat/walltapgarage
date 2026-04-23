@@ -1,3 +1,5 @@
+import { Reveal } from "../components/reveal";
+
 const metrics = [
   {
     number: "01",
@@ -79,73 +81,98 @@ export default function Home() {
         </nav>
 
         <div className="hero-grid">
-          <section className="hero-copy">
-            <p className="eyebrow">Houston, Texas</p>
-            <h1>Rare imports, sourced with taste and delivered without dealership noise.</h1>
-            <p className="lede">
-              Walltap Garage helps enthusiasts secure premium JDM and European
-              vehicles through a cleaner process: sourcing, shipping, import
-              coordination, and final delivery handled with clarity from start to
-              finish.
-            </p>
-            <div className="hero-actions">
-              <a className="button button-primary" href="#contact">
-                Start a Sourcing Request
-              </a>
-              <a className="button button-secondary" href="#inventory">
-                Browse Inventory
-              </a>
-            </div>
-          </section>
-
-          <aside className="hero-panel">
-            <div className="panel-label">Current Focus</div>
-            <div className="signal-card">
-              <p className="signal-kicker">Specialty</p>
-              <p className="signal-value">JDM + Euro Imports</p>
-            </div>
-            <div className="signal-card">
-              <p className="signal-kicker">Approach</p>
-              <p className="signal-value">Curated sourcing over mass listings</p>
-            </div>
-            <div className="signal-card">
-              <p className="signal-kicker">Client Fit</p>
-              <p className="signal-value">
-                Drivers who know exactly what standard they want
+          <Reveal className="hero-copy" direction="up">
+            <section>
+              <p className="eyebrow">Houston, Texas</p>
+              <h1>Rare imports, sourced with taste and delivered without dealership noise.</h1>
+              <p className="lede">
+                Walltap Garage helps enthusiasts secure premium JDM and European
+                vehicles through a cleaner process: sourcing, shipping, import
+                coordination, and final delivery handled with clarity from start to
+                finish.
               </p>
-            </div>
-          </aside>
+              <div className="hero-actions">
+                <a className="button button-primary" href="#contact">
+                  Start a Sourcing Request
+                </a>
+                <a className="button button-secondary" href="#inventory">
+                  Browse Inventory
+                </a>
+              </div>
+            </section>
+          </Reveal>
+
+          <Reveal className="hero-panel" direction="left" delay={120}>
+            <aside>
+              <div className="panel-label">Current Focus</div>
+              <div className="signal-card">
+                <p className="signal-kicker">Specialty</p>
+                <p className="signal-value">JDM + Euro Imports</p>
+              </div>
+              <div className="signal-card">
+                <p className="signal-kicker">Approach</p>
+                <p className="signal-value">Curated sourcing over mass listings</p>
+              </div>
+              <div className="signal-card">
+                <p className="signal-kicker">Client Fit</p>
+                <p className="signal-value">
+                  Drivers who know exactly what standard they want
+                </p>
+              </div>
+              <div className="hero-panel-footer">
+                <span>Premium sourcing</span>
+                <span>Import logistics</span>
+                <span>Curated inventory</span>
+              </div>
+            </aside>
+          </Reveal>
         </div>
 
-        <div className="metrics-strip">
+        <Reveal className="metrics-strip" direction="up" delay={180}>
           {metrics.map((metric) => (
             <div key={metric.number}>
               <p className="metric-number">{metric.number}</p>
               <p className="metric-copy">{metric.copy}</p>
             </div>
           ))}
-        </div>
+        </Reveal>
       </header>
 
       <main>
         <section className="section" id="services">
-          <div className="section-head">
-            <p className="eyebrow">What Walltap Does</p>
-            <h2>A sharper alternative to generic import listings.</h2>
-          </div>
+          <Reveal className="section-head" direction="up">
+            <div>
+              <p className="eyebrow">What Walltap Does</p>
+              <h2>A sharper alternative to generic import listings.</h2>
+            </div>
+          </Reveal>
           <div className="feature-grid">
-            {features.map((feature) => (
-              <article className="feature-card" key={feature.index}>
-                <p className="card-index">{feature.index}</p>
-                <h3>{feature.title}</h3>
-                <p>{feature.copy}</p>
-              </article>
+            <Reveal className="feature-intro" direction="right">
+              <p className="feature-intro-copy">
+                The website needs to signal judgment, restraint, and confidence.
+                That means a tighter selection, cleaner communication, and a visual
+                language that feels more boutique importer than local used-car lot.
+              </p>
+            </Reveal>
+            {features.map((feature, index) => (
+              <Reveal
+                className="feature-card"
+                key={feature.index}
+                direction="up"
+                delay={index * 110}
+              >
+                <article>
+                  <p className="card-index">{feature.index}</p>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.copy}</p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </section>
 
         <section className="section section-band" id="inventory">
-          <div className="section-head split-head">
+          <Reveal className="section-head split-head" direction="up">
             <div>
               <p className="eyebrow">Inventory Direction</p>
               <h2>Cars with actual taste behind them.</h2>
@@ -155,63 +182,90 @@ export default function Home() {
               European vehicles for buyers who care about the right spec, the
               right look, and the right process.
             </p>
-          </div>
+          </Reveal>
           <div className="inventory-grid">
-            <article className="inventory-card inventory-card-wide">
-              <p className="inventory-tag">Featured Types</p>
-              <h3>Silvias, Chasers, Supras, Skylines, and standout Euros.</h3>
-              <p>
-                Walltap focuses on enthusiast cars with identity, not anonymous
-                commuter inventory. The selection should feel narrow on purpose.
-              </p>
-            </article>
-            <article className="inventory-card">
-              <p className="inventory-tag">JDM</p>
-              <h3>Driver-focused icons</h3>
-            </article>
-            <article className="inventory-card">
-              <p className="inventory-tag">Euro</p>
-              <h3>Rare prestige inventory</h3>
-            </article>
-            <article className="inventory-card">
-              <p className="inventory-tag">Standards</p>
-              <h3>Condition, authenticity, and presence first</h3>
-            </article>
+            <Reveal className="inventory-card inventory-card-wide" direction="up">
+              <article>
+                <p className="inventory-tag">Featured Types</p>
+                <h3>Silvias, Chasers, Supras, Skylines, and standout Euros.</h3>
+                <p>
+                  Walltap focuses on enthusiast cars with identity, not anonymous
+                  commuter inventory. The selection should feel narrow on purpose.
+                </p>
+              </article>
+            </Reveal>
+            <Reveal className="inventory-card" direction="up" delay={80}>
+              <article>
+                <p className="inventory-tag">JDM</p>
+                <h3>Driver-focused icons</h3>
+              </article>
+            </Reveal>
+            <Reveal className="inventory-card" direction="up" delay={140}>
+              <article>
+                <p className="inventory-tag">Euro</p>
+                <h3>Rare prestige inventory</h3>
+              </article>
+            </Reveal>
+            <Reveal className="inventory-card inventory-callout" direction="left" delay={200}>
+              <article>
+                <p className="inventory-tag">Standards</p>
+                <h3>Condition, authenticity, and presence first</h3>
+                <p>
+                  Buyers are not coming for volume. They are coming for sharper
+                  filters, stronger taste, and cleaner execution.
+                </p>
+              </article>
+            </Reveal>
           </div>
         </section>
 
         <section className="section" id="process">
-          <div className="section-head">
-            <p className="eyebrow">Process</p>
-            <h2>Built to feel direct and informed, not sales-heavy.</h2>
-          </div>
+          <Reveal className="section-head process-head" direction="up">
+            <div>
+              <p className="eyebrow">Process</p>
+              <h2>Built to feel direct and informed, not sales-heavy.</h2>
+            </div>
+            <p className="section-note">
+              Scroll progression matters here. The process should read like a
+              controlled sequence, not four matching boxes dropped into a grid.
+            </p>
+          </Reveal>
           <div className="process-grid">
-            {processSteps.map((step) => (
-              <article className="process-step" key={step.number}>
-                <p className="step-number">{step.number}</p>
-                <h3>{step.title}</h3>
-                <p>{step.copy}</p>
-              </article>
+            {processSteps.map((step, index) => (
+              <Reveal
+                className="process-step"
+                key={step.number}
+                direction="up"
+                delay={index * 100}
+              >
+                <article>
+                  <p className="step-number">{step.number}</p>
+                  <h3>{step.title}</h3>
+                  <p>{step.copy}</p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </section>
 
         <section className="section founder-section">
-          <div className="founder-card">
-            <p className="eyebrow">About the Brand</p>
-            <h2>Curated imports for people who know what they are looking at.</h2>
-            <p>
-              Founded by Andre Iancu, Walltap Garage is built around a simple
-              position: enthusiasts deserve a sourcing process that feels sharp,
-              transparent, and aligned with real car culture. That means fewer
-              filler listings, better taste, and more attention on the details
-              that actually matter.
-            </p>
-          </div>
+          <Reveal className="founder-card" direction="right">
+            <div>
+              <p className="eyebrow">About the Brand</p>
+              <h2>Curated imports for people who know what they are looking at.</h2>
+              <p>
+                Founded by Andre Iancu, Walltap Garage is built around a simple
+                position: enthusiasts deserve a sourcing process that feels sharp,
+                transparent, and aligned with real car culture. That means fewer
+                filler listings, better taste, and more attention on the details
+                that actually matter.
+              </p>
+            </div>
+          </Reveal>
         </section>
 
         <section className="section cta-section" id="contact">
-          <div className="cta-card">
+          <Reveal className="cta-card" direction="up">
             <div>
               <p className="eyebrow">Get in Touch</p>
               <h2>Ready to source your next car?</h2>
@@ -234,7 +288,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-          </div>
+          </Reveal>
         </section>
       </main>
     </div>

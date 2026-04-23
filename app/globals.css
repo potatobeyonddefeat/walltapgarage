@@ -57,6 +57,34 @@ a {
   padding: 16px 0 48px;
 }
 
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 800ms cubic-bezier(0.2, 0.9, 0.18, 1),
+    transform 800ms cubic-bezier(0.2, 0.9, 0.18, 1),
+    filter 800ms cubic-bezier(0.2, 0.9, 0.18, 1);
+  will-change: opacity, transform;
+  filter: blur(10px);
+}
+
+.reveal-up {
+  transform: translate3d(0, 48px, 0);
+}
+
+.reveal-left {
+  transform: translate3d(48px, 0, 0);
+}
+
+.reveal-right {
+  transform: translate3d(-48px, 0, 0);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
 .hero,
 .section {
   border: 1px solid var(--line);
@@ -134,7 +162,7 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.72fr);
   gap: 28px;
-  padding: 72px 0 44px;
+  padding: 88px 0 52px;
 }
 
 .hero-copy {
@@ -170,6 +198,7 @@ h3 {
 h1 {
   max-width: 10ch;
   font-size: clamp(3.8rem, 10vw, 7.2rem);
+  text-wrap: balance;
 }
 
 h2 {
@@ -250,6 +279,9 @@ h3 {
   align-self: end;
   padding: 18px;
   border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015)),
+    linear-gradient(145deg, rgba(201, 140, 74, 0.08), transparent 55%);
 }
 
 .panel-label {
@@ -274,6 +306,23 @@ h3 {
   margin: 0;
   color: var(--text);
   line-height: 1.45;
+}
+
+.hero-panel-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 8px;
+}
+
+.hero-panel-footer span {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .metrics-strip {
@@ -320,6 +369,13 @@ main {
   margin-bottom: 26px;
 }
 
+.process-head {
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 420px);
+  gap: 24px;
+  align-items: end;
+}
+
 .split-head {
   display: grid;
   grid-template-columns: 1fr minmax(260px, 420px);
@@ -333,8 +389,24 @@ main {
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.15fr) repeat(3, minmax(0, 1fr));
   gap: 16px;
+}
+
+.feature-intro {
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  padding: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01)),
+    radial-gradient(circle at top right, rgba(201, 140, 74, 0.16), transparent 45%);
+}
+
+.feature-intro-copy {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.15rem;
+  line-height: 1.8;
 }
 
 .feature-card,
@@ -375,6 +447,13 @@ main {
   min-height: 456px;
 }
 
+.inventory-callout {
+  min-height: 220px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.015)),
+    linear-gradient(135deg, rgba(201, 140, 74, 0.12), transparent 62%);
+}
+
 .inventory-tag {
   margin: 0 0 12px;
   color: var(--accent);
@@ -385,6 +464,22 @@ main {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
+  align-items: start;
+}
+
+.process-step {
+  position: relative;
+  min-height: 250px;
+}
+
+.process-step::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 52px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(201, 140, 74, 0.9), transparent);
 }
 
 .founder-section {
@@ -402,18 +497,26 @@ main {
   grid-template-columns: minmax(0, 1fr) minmax(300px, 430px);
   gap: 24px;
   align-items: end;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015)),
+    radial-gradient(circle at top left, rgba(201, 140, 74, 0.14), transparent 34%);
 }
 
 @media (max-width: 1040px) {
   .hero-grid,
   .split-head,
-  .cta-card {
+  .cta-card,
+  .process-head {
     grid-template-columns: 1fr;
   }
 
   .feature-grid,
   .process-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .feature-intro {
+    grid-column: span 2;
   }
 
   .inventory-grid {
@@ -468,6 +571,10 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .feature-intro {
+    grid-column: auto;
+  }
+
   .inventory-card,
   .inventory-card-wide {
     min-height: 200px;
@@ -476,5 +583,12 @@ main {
 
   .section {
     padding: 20px;
+  }
+
+  .reveal,
+  .reveal-up,
+  .reveal-left,
+  .reveal-right {
+    transition-duration: 520ms;
   }
 }
