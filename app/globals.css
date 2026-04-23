@@ -1,17 +1,17 @@
 :root {
-  --bg: #090b0d;
-  --bg-soft: #12161b;
-  --panel: rgba(15, 18, 22, 0.9);
-  --panel-strong: #181d23;
+  --bg: #060608;
+  --bg-soft: #0f1014;
+  --panel: rgba(12, 12, 15, 0.92);
+  --panel-strong: #15161b;
   --line: rgba(255, 255, 255, 0.12);
   --line-strong: rgba(255, 255, 255, 0.22);
   --text: #f5f3ef;
-  --muted: #c6ced6;
-  --muted-strong: #d7dee5;
-  --accent: #dfbe8b;
-  --accent-strong: #e4694e;
-  --accent-soft: rgba(223, 190, 139, 0.16);
-  --glow: rgba(223, 190, 139, 0.22);
+  --muted: #ccd1d6;
+  --muted-strong: #e1e6ea;
+  --accent: #ff6a7f;
+  --accent-strong: #d5113a;
+  --accent-soft: rgba(213, 17, 58, 0.18);
+  --glow: rgba(255, 64, 96, 0.24);
   --shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
 }
 
@@ -29,9 +29,9 @@ body {
   font-family: var(--font-body), sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 15% 0%, rgba(212, 176, 122, 0.14), transparent 25%),
-    radial-gradient(circle at 100% 20%, rgba(214, 90, 67, 0.08), transparent 22%),
-    linear-gradient(180deg, #090b0d 0%, var(--bg) 100%);
+    radial-gradient(circle at 15% 0%, rgba(213, 17, 58, 0.24), transparent 28%),
+    radial-gradient(circle at 100% 20%, rgba(95, 12, 27, 0.22), transparent 24%),
+    linear-gradient(180deg, #050507 0%, var(--bg) 100%);
 }
 
 body::before {
@@ -89,7 +89,7 @@ a {
 .hero,
 .section {
   border: 1px solid var(--line);
-  border-radius: 28px;
+  border-radius: 14px;
   background: linear-gradient(180deg, rgba(20, 24, 29, 0.92), rgba(14, 17, 21, 0.92));
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -112,8 +112,8 @@ a {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(125deg, transparent 0%, transparent 58%, rgba(223, 190, 139, 0.14) 100%),
-    radial-gradient(circle at 78% 30%, rgba(228, 105, 78, 0.18), transparent 24%);
+    linear-gradient(125deg, transparent 0%, transparent 58%, rgba(213, 17, 58, 0.16) 100%),
+    radial-gradient(circle at 78% 30%, rgba(255, 79, 111, 0.18), transparent 24%);
   pointer-events: none;
 }
 
@@ -139,7 +139,7 @@ a {
   z-index: 5;
   padding: 10px 12px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 18px;
+  border-radius: 10px;
   background: rgba(10, 12, 15, 0.62);
   backdrop-filter: blur(16px);
 }
@@ -155,12 +155,12 @@ a {
   text-transform: uppercase;
 }
 
-.brand-mark {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  background: var(--accent);
-  box-shadow: 0 0 20px var(--glow);
+.brand-logo {
+  width: 44px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 8px 18px rgba(213, 17, 58, 0.3));
 }
 
 .nav-links {
@@ -287,7 +287,7 @@ h3 {
   justify-content: center;
   min-height: 50px;
   padding: 0.82rem 1.3rem;
-  border-radius: 999px;
+  border-radius: 10px;
   font-size: 0.96rem;
   font-weight: 700;
   transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
@@ -301,6 +301,7 @@ h3 {
 .button-primary {
   background: var(--accent-strong);
   color: #fff7f1;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .button-secondary {
@@ -325,7 +326,7 @@ h3 {
 .hero-media-frame {
   position: relative;
   min-height: 470px;
-  border-radius: 28px;
+  border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background:
@@ -365,7 +366,7 @@ h3 {
 
 .signal-card {
   padding: 16px;
-  border-radius: 18px;
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.025);
   border: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -392,7 +393,7 @@ h3 {
 .hero-panel-footer span {
   padding: 0.5rem 0.7rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 999px;
+  border-radius: 8px;
   color: var(--muted);
   font-size: 0.78rem;
   letter-spacing: 0.04em;
@@ -436,7 +437,7 @@ main {
 
 .section-band {
   background:
-    linear-gradient(135deg, rgba(201, 140, 74, 0.08), transparent 44%),
+    linear-gradient(135deg, rgba(213, 17, 58, 0.1), transparent 44%),
     linear-gradient(180deg, rgba(20, 24, 29, 0.92), rgba(14, 17, 21, 0.92));
 }
 
@@ -496,7 +497,7 @@ main {
 .process-step,
 .founder-card,
 .cta-card {
-  border-radius: 24px;
+  border-radius: 12px;
   padding: 22px;
 }
 
@@ -509,7 +510,7 @@ main {
 
 .inventory-editorial {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
   gap: 24px;
   align-items: stretch;
 }
@@ -524,7 +525,7 @@ main {
 .gallery-tile {
   position: relative;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 12px;
   border: 1px solid var(--line);
   background-size: cover;
   background-position: center;
@@ -575,7 +576,7 @@ main {
   display: flex;
   align-items: flex-end;
   padding: 28px;
-  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
 }
 
 .inventory-list {
@@ -608,12 +609,12 @@ main {
   right: 22px;
   width: 52px;
   height: 1px;
-  background: linear-gradient(90deg, rgba(214, 90, 67, 0.9), transparent);
+  background: linear-gradient(90deg, rgba(213, 17, 58, 0.9), transparent);
 }
 
 .founder-section {
   background:
-    radial-gradient(circle at top right, rgba(223, 190, 139, 0.12), transparent 24%),
+    radial-gradient(circle at top right, rgba(213, 17, 58, 0.12), transparent 24%),
     linear-gradient(180deg, rgba(20, 24, 29, 0.92), rgba(14, 17, 21, 0.92));
 }
 
@@ -628,7 +629,7 @@ main {
   align-items: end;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015)),
-    radial-gradient(circle at top left, rgba(214, 90, 67, 0.14), transparent 34%);
+    radial-gradient(circle at top left, rgba(213, 17, 58, 0.16), transparent 34%);
 }
 
 a:focus-visible,
@@ -682,7 +683,7 @@ button:focus-visible {
 
   .inventory-copy {
     padding: 0;
-    border-left: 0;
+    border-right: 0;
   }
 }
 
@@ -701,7 +702,7 @@ button:focus-visible {
   .cta-card,
   .hero-media-frame,
   .gallery-tile {
-    border-radius: 22px;
+    border-radius: 10px;
   }
 
   .topbar {
@@ -716,6 +717,11 @@ button:focus-visible {
   .brand {
     font-size: 0.84rem;
     letter-spacing: 0.14em;
+  }
+
+  .brand-logo {
+    width: 36px;
+    height: 33px;
   }
 
   .nav-links {
@@ -861,6 +867,14 @@ button:focus-visible {
 
   .inventory-editorial {
     gap: 18px;
+  }
+
+  .inventory-copy {
+    order: 1;
+  }
+
+  .inventory-gallery {
+    order: 2;
   }
 
   .inventory-gallery > div {

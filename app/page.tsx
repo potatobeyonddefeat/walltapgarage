@@ -85,7 +85,11 @@ export default function Home() {
       <header className="hero" id="top">
         <nav className="topbar">
           <a className="brand" href="#top">
-            <span className="brand-mark" />
+            <img
+              className="brand-logo"
+              src="https://rjdavx8ozyznxeyh.public.blob.vercel-storage.com/production/websites/generated-logos/db4f8c75-a766-4859-8999-e5f0037992ee-Gd0J9YdMy09ohXlu8fxlAE9hKgCjpn.png"
+              alt="Walltap Garage logo"
+            />
             <span>Walltap Garage</span>
           </a>
           <SectionNav />
@@ -197,15 +201,6 @@ export default function Home() {
             </p>
           </Reveal>
           <div className="inventory-editorial">
-            <Reveal className="inventory-gallery" direction="up">
-              <div>
-                {inventoryGallery.map((item) => (
-                  <article className={`gallery-tile ${item.className}`} key={item.name}>
-                    <span>{item.name}</span>
-                  </article>
-                ))}
-              </div>
-            </Reveal>
             <Reveal className="inventory-copy" direction="left" delay={120}>
               <article>
                 <p className="inventory-tag">Featured Types</p>
@@ -220,6 +215,15 @@ export default function Home() {
                   <li>Inventory chosen for people who actually know the chassis</li>
                 </ul>
               </article>
+            </Reveal>
+            <Reveal className="inventory-gallery" direction="up">
+              <div>
+                {inventoryGallery.map((item) => (
+                  <article className={`gallery-tile ${item.className}`} key={item.name}>
+                    <span>{item.name}</span>
+                  </article>
+                ))}
+              </div>
             </Reveal>
           </div>
         </section>
