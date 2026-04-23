@@ -54,6 +54,7 @@ a {
   width: min(1200px, calc(100% - 32px));
   margin: 0 auto;
   padding: 16px 0 48px;
+  overflow-x: clip;
 }
 
 .reveal {
@@ -186,6 +187,7 @@ a {
 
 .hero-copy {
   max-width: 760px;
+  min-width: 0;
 }
 
 .eyebrow,
@@ -294,6 +296,7 @@ h3 {
 .cta-card {
   border: 1px solid var(--line);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.015));
+  min-width: 0;
 }
 
 .hero-panel {
@@ -436,6 +439,7 @@ main {
   color: var(--text);
   font-size: 1.15rem;
   line-height: 1.8;
+  text-wrap: balance;
 }
 
 .feature-card,
@@ -586,7 +590,8 @@ button:focus-visible {
 @media (max-width: 720px) {
   .page-shell {
     width: min(100% - 16px, 1200px);
-    padding-top: 8px;
+    padding-top: 6px;
+    padding-bottom: 28px;
   }
 
   .hero,
@@ -601,21 +606,94 @@ button:focus-visible {
   }
 
   .topbar {
-    align-items: flex-start;
+    align-items: stretch;
     flex-direction: column;
     top: 8px;
+    gap: 12px;
+    padding: 12px;
   }
 
   .nav-links {
-    gap: 14px;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-links a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 0.74rem;
   }
 
   .hero-grid {
-    padding: 40px 0 30px;
+    gap: 18px;
+    padding: 28px 0 22px;
   }
 
   h1 {
-    max-width: 9ch;
+    max-width: 11ch;
+    font-size: clamp(3rem, 16vw, 4.5rem);
+    line-height: 0.95;
+  }
+
+  h2 {
+    max-width: 100%;
+    font-size: clamp(2.1rem, 10vw, 3.1rem);
+    line-height: 0.96;
+  }
+
+  h3 {
+    font-size: 1.45rem;
+  }
+
+  .eyebrow,
+  .chapter-label {
+    font-size: 0.72rem;
+  }
+
+  .lede,
+  .feature-card p,
+  .inventory-card p,
+  .process-step p,
+  .founder-card p,
+  .section-note,
+  .cta-copy p,
+  .metric-copy,
+  .signal-value {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .hero-actions,
+  .cta-actions {
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .button {
+    width: 100%;
+    min-height: 48px;
+    padding: 0.9rem 1rem;
+  }
+
+  .hero-panel {
+    padding: 14px;
+  }
+
+  .signal-card,
+  .feature-card,
+  .inventory-card,
+  .process-step,
+  .founder-card,
+  .cta-card,
+  .feature-intro {
+    padding: 16px;
   }
 
   .metrics-strip,
@@ -631,12 +709,30 @@ button:focus-visible {
 
   .inventory-card,
   .inventory-card-wide {
-    min-height: 200px;
+    min-height: 180px;
     grid-column: auto;
   }
 
+  .metrics-strip {
+    gap: 10px;
+  }
+
+  .metrics-strip > div {
+    padding-top: 12px;
+  }
+
   .section {
-    padding: 20px;
+    padding: 16px;
+  }
+
+  .process-step {
+    min-height: 0;
+  }
+
+  .process-step::before {
+    width: 38px;
+    top: 16px;
+    right: 16px;
   }
 
   .reveal,
