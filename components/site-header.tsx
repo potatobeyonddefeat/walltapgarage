@@ -2,12 +2,24 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navItems } from "../lib/site-content";
 
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.toggle("menu-open", open);
+
+    return () => {
+      document.body.classList.remove("menu-open");
+    };
+  }, [open]);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <header className="site-header">
@@ -46,7 +58,12 @@ export function SiteHeader() {
             onClick={() => setOpen((value) => !value)}
             type="button"
           >
-            Menu
+            <span className="nav-toggle-box" aria-hidden="true">
+              <span className="nav-toggle-line" />
+              <span className="nav-toggle-line" />
+              <span className="nav-toggle-line" />
+            </span>
+            <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
           </button>
 
           <div className={`mobile-nav ${open ? "is-open" : ""}`} id="mobile-menu">
