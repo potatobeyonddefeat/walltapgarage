@@ -4,15 +4,15 @@ import { SectionNav } from "../components/section-nav";
 const metrics = [
   {
     number: "01",
-    copy: "Auction sourcing and acquisition support",
+    copy: "Auction sourcing with condition and provenance in mind",
   },
   {
     number: "02",
-    copy: "Shipping and import coordination to the U.S.",
+    copy: "Import coordination from Japan and Europe to the U.S.",
   },
   {
     number: "03",
-    copy: "Hand-picked inventory for serious enthusiasts",
+    copy: "Hand-picked inventory that feels curated rather than listed",
   },
 ];
 
@@ -64,6 +64,21 @@ const processSteps = [
   },
 ];
 
+const inventoryGallery = [
+  {
+    name: "Mark II",
+    className: "gallery-markii",
+  },
+  {
+    name: "Chaser",
+    className: "gallery-chaser",
+  },
+  {
+    name: "Supra",
+    className: "gallery-supra",
+  },
+];
+
 export default function Home() {
   return (
     <div className="page-shell">
@@ -79,8 +94,9 @@ export default function Home() {
         <div className="hero-grid">
           <Reveal className="hero-copy" direction="up">
             <section>
-              <p className="eyebrow">Houston, Texas</p>
-              <h1>Rare imports, sourced with taste and delivered without dealership noise.</h1>
+              <p className="eyebrow">Houston, Texas · Premium JDM and Euro Imports</p>
+              <p className="brand-lockup">Walltap Garage</p>
+              <h1>Rare imports with real presence, not generic dealer inventory.</h1>
               <p className="lede">
                 Walltap Garage helps enthusiasts secure premium JDM and European
                 vehicles through a cleaner process: sourcing, shipping, import
@@ -98,22 +114,15 @@ export default function Home() {
             </section>
           </Reveal>
 
-          <Reveal className="hero-panel" direction="left" delay={120}>
+          <Reveal className="hero-media" direction="left" delay={120}>
             <aside>
-              <div className="panel-label">Current Focus</div>
-              <div className="signal-card">
-                <p className="signal-kicker">Specialty</p>
-                <p className="signal-value">JDM + Euro Imports</p>
-              </div>
-              <div className="signal-card">
-                <p className="signal-kicker">Approach</p>
-                <p className="signal-value">Curated sourcing over mass listings</p>
-              </div>
-              <div className="signal-card">
-                <p className="signal-kicker">Client Fit</p>
-                <p className="signal-value">
-                  Drivers who know exactly what standard they want
-                </p>
+              <div className="hero-media-frame">
+                <div className="hero-media-copy">
+                  <p className="panel-label">Current Focus</p>
+                  <p className="hero-media-quote">
+                    Importer taste, transparent process, cars worth waiting for.
+                  </p>
+                </div>
               </div>
               <div className="hero-panel-footer">
                 <span>Premium sourcing</span>
@@ -145,11 +154,17 @@ export default function Home() {
           </Reveal>
           <div className="feature-grid">
             <Reveal className="feature-intro" direction="right">
-              <p className="feature-intro-copy">
-                The website needs to signal judgment, restraint, and confidence.
-                That means a tighter selection, cleaner communication, and a visual
-                language that feels more boutique importer than local used-car lot.
-              </p>
+              <div>
+                <p className="feature-intro-copy">
+                  Walltap is for buyers who know the difference between rare and
+                  merely expensive. The story is not volume. It is selection,
+                  sourcing judgment, and delivery without dealership drag.
+                </p>
+                <p className="feature-intro-note">
+                  From Japanese auction sourcing to final U.S. handoff, the work
+                  stays narrow, intentional, and enthusiast-led.
+                </p>
+              </div>
             </Reveal>
             {features.map((feature, index) => (
               <Reveal
@@ -181,8 +196,17 @@ export default function Home() {
               right look, and the right process.
             </p>
           </Reveal>
-          <div className="inventory-grid">
-            <Reveal className="inventory-card inventory-card-wide" direction="up">
+          <div className="inventory-editorial">
+            <Reveal className="inventory-gallery" direction="up">
+              <div>
+                {inventoryGallery.map((item) => (
+                  <article className={`gallery-tile ${item.className}`} key={item.name}>
+                    <span>{item.name}</span>
+                  </article>
+                ))}
+              </div>
+            </Reveal>
+            <Reveal className="inventory-copy" direction="left" delay={120}>
               <article>
                 <p className="inventory-tag">Featured Types</p>
                 <h3>Silvias, Chasers, Supras, Skylines, and standout Euros.</h3>
@@ -190,28 +214,11 @@ export default function Home() {
                   Walltap focuses on enthusiast cars with identity, not anonymous
                   commuter inventory. The selection should feel narrow on purpose.
                 </p>
-              </article>
-            </Reveal>
-            <Reveal className="inventory-card" direction="up" delay={80}>
-              <article>
-                <p className="inventory-tag">JDM</p>
-                <h3>Driver-focused icons</h3>
-              </article>
-            </Reveal>
-            <Reveal className="inventory-card" direction="up" delay={140}>
-              <article>
-                <p className="inventory-tag">Euro</p>
-                <h3>Rare prestige inventory</h3>
-              </article>
-            </Reveal>
-            <Reveal className="inventory-card inventory-callout" direction="left" delay={200}>
-              <article>
-                <p className="inventory-tag">Standards</p>
-                <h3>Condition, authenticity, and presence first</h3>
-                <p>
-                  Buyers are not coming for volume. They are coming for sharper
-                  filters, stronger taste, and cleaner execution.
-                </p>
+                <ul className="inventory-list">
+                  <li>Low-volume sourcing over crowded listings</li>
+                  <li>Condition, authenticity, and visual presence first</li>
+                  <li>Inventory chosen for people who actually know the chassis</li>
+                </ul>
               </article>
             </Reveal>
           </div>
