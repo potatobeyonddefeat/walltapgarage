@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ImportProcessSection } from "../../components/import-process-section";
 import { PageShell } from "../../components/page-shell";
 import { services } from "../../lib/site-content";
 
@@ -39,6 +40,8 @@ export default function ServicesPage() {
             </Link>
           </div>
         </section>
+
+        <ImportProcessSection />
       </main>
     </PageShell>
   );

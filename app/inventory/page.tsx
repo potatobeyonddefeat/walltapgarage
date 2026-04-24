@@ -1,58 +1,34 @@
-import Link from "next/link";
 import { PageShell } from "../../components/page-shell";
+import { InventoryBrowser } from "../../components/inventory-browser";
 import { inventoryVehicles } from "../../lib/site-content";
 
-export default function InventoryPage() {
+const allowedCategories = new Set(["all", "jdm", "european", "new-arrivals"]);
+
+type InventoryPageProps = {
+  searchParams?: Promise<{
+    body?: string;
+    category?: string;
+    q?: string;
+    status?: string;
+  }>;
+};
+
+export default async function InventoryPage({ searchParams }: InventoryPageProps) {
+  const resolvedSearchParams = searchParams ? await searchParams : undefined;
+  const requestedCategory = resolvedSearchParams?.category ?? "all";
+  const initialCategory = allowedCategories.has(requestedCategory) ? requestedCategory : "all";
+
   return (
     <PageShell>
       <main>
         <section className="section page-intro">
-          <div className="section-head split-head">
-            <div>
-              <p className="eyebrow">Inventory</p>
-              <h1 className="page-title">Premium vehicles ready to own.</h1>
-            </div>
-            <p className="section-note">
-              Browse current inventory and review key details at a glance before
-              reaching out to schedule a viewing.
-            </p>
-          </div>
-
-          <div className="inventory-grid inventory-grid-full">
-            {inventoryVehicles.map((vehicle) => (
-              <article className="inventory-card" key={vehicle.model}>
-                <div className={`inventory-card-image ${vehicle.imageClass}`} />
-                <div className="inventory-card-body">
-                  <div className="inventory-row">
-                    <span className="inventory-spec-label">Year</span>
-                    <span className="inventory-spec-value">{vehicle.year}</span>
-                  </div>
-                  <div className="inventory-row">
-                    <span className="inventory-spec-label">Model</span>
-                    <h3>{vehicle.model}</h3>
-                  </div>
-                  <div className="inventory-row">
-                    <span className="inventory-spec-label">Body</span>
-                    <span className="inventory-spec-value">{vehicle.body}</span>
-                  </div>
-                  <div className="inventory-row">
-                    <span className="inventory-spec-label">Source</span>
-                    <span className="inventory-spec-value">{vehicle.source}</span>
-                  </div>
-                  <div className="inventory-row inventory-row-strong">
-                    <span className="inventory-spec-label">Price</span>
-                    <span className="inventory-price">{vehicle.price}</span>
-                  </div>
-                  <div className="inventory-row">
-                    <span className="inventory-status">{vehicle.status}</span>
-                    <Link className="button button-secondary card-button" href="/contact">
-                      Contact Us
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+          <InventoryBrowser
+            initialBodyStyle={resolvedSearchParams?.body ?? ""}
+            initialCategory={initialCategory as "all" | "jdm" | "european" | "new-arrivals"}
+            initialSearch={resolvedSearchParams?.q ?? ""}
+            initialStatus={resolvedSearchParams?.status ?? ""}
+            vehicles={inventoryVehicles}
+          />
         </section>
       </main>
     </PageShell>

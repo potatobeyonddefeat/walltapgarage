@@ -8,6 +8,16 @@ const faqs = [
       "Most buyers begin with a call or contact form submission so Walltap can confirm budget, target models, and timeline before sourcing begins.",
   },
   {
+    question: "When do I approve the vehicle?",
+    answer:
+      "Before a purchase moves forward, Walltap walks you through the specific candidate vehicle, its condition notes, and the reasons it fits the brief so you can approve the exact car being sourced.",
+  },
+  {
+    question: "What paperwork or checkpoints should I expect?",
+    answer:
+      "Buyers should expect milestone communication around the sourcing brief, vehicle approval, purchase confirmation, export or shipping progress, and final arrival or handoff planning.",
+  },
+  {
     question: "Do you only sell inventory already in Texas?",
     answer:
       "No. Walltap supports both in-stock inventory and customer-specific sourcing for Japanese and European vehicles.",
@@ -48,8 +58,8 @@ export default function FaqPage() {
           <div className="info-panel">
             <h3>Need a direct answer?</h3>
             <p>
-              Reach out with the chassis, budget, or import timeline you have in mind
-              and Walltap can point you in the right direction.
+              Reach out with the chassis, budget, or import timeline you have in mind.
+              Walltap can explain the next checkpoint before you commit.
             </p>
             <Link className="button button-primary" href="/contact">
               Contact Us

@@ -23,7 +23,7 @@ export default function Home() {
                   <Link className="button button-primary" href="/inventory">
                     View Inventory
                   </Link>
-                  <Link className="button button-secondary" href="/contact">
+                  <Link className="button button-secondary" href="/contact?inquiry=source">
                     Start Your Import
                   </Link>
                 </div>
@@ -73,16 +73,32 @@ export default function Home() {
 
           <div className="inventory-grid">
             {featured.map((vehicle) => (
-              <article className="inventory-card" key={vehicle.model}>
+              <article className="inventory-card" key={vehicle.id}>
                 <div className={`inventory-card-image ${vehicle.imageClass}`} />
                 <div className="inventory-card-body">
                   <p className="inventory-spec-label">Year</p>
                   <p className="inventory-spec-value">{vehicle.year}</p>
                   <p className="inventory-spec-label">Model</p>
-                  <h3>{vehicle.model}</h3>
+                  <h3>
+                    {vehicle.make} {vehicle.model}
+                  </h3>
                   <p className="inventory-spec-label">Price</p>
                   <p className="inventory-price">{vehicle.price}</p>
+                  <p className="inventory-spec-value">{vehicle.highlights[0] ?? vehicle.location}</p>
                   <p className="inventory-status">{vehicle.status}</p>
+                  <div className="inventory-card-actions">
+                    <Link className="button button-primary card-button" href="/inventory">
+                      View Listing
+                    </Link>
+                    <Link
+                      className="button button-secondary card-button"
+                      href={`/contact?inquiry=inventory&vehicle=${encodeURIComponent(
+                        `${vehicle.year} ${vehicle.make} ${vehicle.model}`,
+                      )}`}
+                    >
+                      Ask About This Car
+                    </Link>
+                  </div>
                 </div>
               </article>
             ))}
@@ -92,7 +108,7 @@ export default function Home() {
             <Link className="button button-primary" href="/inventory">
               View Inventory
             </Link>
-            <Link className="button button-secondary" href="/contact">
+            <Link className="button button-secondary" href="/contact?inquiry=inventory">
               Schedule a Viewing
             </Link>
           </div>
