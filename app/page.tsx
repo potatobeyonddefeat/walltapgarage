@@ -79,8 +79,7 @@ export default function Home() {
                 <div className="hero-media-copy">
                   <p className="panel-label">Available Now</p>
                   <p className="hero-media-quote">
-                    Inventory you can review now, with sourcing support when the right
-                    car is not already on the ground.
+                    Review current inventory first. Source the right car second.
                   </p>
                 </div>
               </div>
@@ -104,15 +103,47 @@ export default function Home() {
         </section>
 
         <section className="section">
+          <div className="section-intro-rail">
+            <div className="section-intro-copy">
+              <div className="section-head split-head">
+                <div>
+                  <p className="eyebrow">Services</p>
+                  <h2>Three direct ways to work with Walltap Garage.</h2>
+                </div>
+                <p className="section-note">
+                  The storefront is built around the actual business: sourcing the right
+                  vehicle, selling current inventory, and managing the import path with
+                  fewer surprises.
+                </p>
+              </div>
+
+              <ul className="section-kicker-list">
+                <li>Start with current inventory when the right fit is already on the ground.</li>
+                <li>Open a sourcing brief when the exact chassis, trim, or mileage matters.</li>
+                <li>Track logistics and delivery through documented checkpoints instead of guesswork.</li>
+              </ul>
+            </div>
+
+            <div className="section-intro-visual" aria-hidden="true">
+              <div className="section-intro-visual-copy">
+                <p className="panel-label">Buyer support</p>
+                <h2>Inventory, sourcing, and shipping in one operating lane.</h2>
+                <p>
+                  Serious buyers get a cleaner handoff from inquiry to delivery, whether the car is
+                  ready now or still needs to be found.
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="section-head split-head">
             <div>
-              <p className="eyebrow">Services</p>
-              <h2>Three direct ways to work with Walltap Garage.</h2>
+              <p className="eyebrow">Service lanes</p>
+              <h2>Pick the path that matches where you are in the buying process.</h2>
             </div>
             <p className="section-note">
-              The storefront is built around the actual business: sourcing the right
-              vehicle, selling current inventory, and managing the import path with
-              fewer surprises.
+              Each route keeps the next action obvious, whether you are reviewing stock,
+              approving a sourced car, or coordinating transport.
             </p>
           </div>
 
@@ -147,7 +178,10 @@ export default function Home() {
           <div className="inventory-grid new-arrivals-grid">
             {newArrivals.map((vehicle) => (
               <article className="inventory-card" key={vehicle.id}>
-                <div className={`inventory-card-image ${vehicle.imageClass}`} />
+                <div
+                  className={`inventory-card-image ${vehicle.imageClass}`}
+                  style={{ backgroundPosition: vehicle.imagePosition }}
+                />
                 <div className="inventory-card-body">
                   <p className="inventory-spec-label">Year</p>
                   <p className="inventory-spec-value">{vehicle.year}</p>

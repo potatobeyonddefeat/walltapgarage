@@ -268,12 +268,14 @@ export function InventoryBrowser({
           {filteredVehicles.map((vehicle) => (
             <article className={styles.card} key={vehicle.id}>
               <div
-                className={styles.cardMedia}
+                className={`${styles.cardMedia} ${vehicle.imageClass}`}
                 style={
                   {
                     "--vehicle-base": vehicle.palette.base,
                     "--vehicle-accent": vehicle.palette.accent,
                     "--vehicle-glow": vehicle.palette.glow,
+                    "--vehicle-position": vehicle.imagePosition,
+                    "--vehicle-mobile-position": vehicle.mobileImagePosition,
                   } as CSSProperties
                 }
               >

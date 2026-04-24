@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
+import { companyDetails } from "../lib/site-content";
 
 type FormState = {
   fullName: string;
@@ -104,9 +105,30 @@ export function LeadCaptureForm(props: LeadCaptureFormProps) {
 
     setError("");
     setIsSubmitted(true);
-    setStatusMessage(
-      "Request captured on this device. Connect this form to your CRM, email handler, or API route to receive live submissions.",
+
+    const lines = [
+      `Name: ${formState.fullName}`,
+      `Email: ${formState.email}`,
+      `Phone: ${formState.phone || "Not provided"}`,
+      `Inquiry type: ${formState.inquiryType}`,
+      `Vehicle interest: ${formState.vehicleInterest}`,
+      `Budget: ${formState.budget || "Not provided"}`,
+      `Timeline: ${formState.timeline || "Not provided"}`,
+      `Preferred follow-up: ${formState.contactPreference}`,
+      `Trade-in: ${formState.tradeIn}`,
+      "",
+      "Notes:",
+      formState.notes || "No additional notes.",
+    ];
+
+    const subject = encodeURIComponent(
+      `Walltap Garage inquiry: ${formState.vehicleInterest || formState.inquiryType}`,
     );
+    const body = encodeURIComponent(lines.join("\n"));
+
+    setStatusMessage("Opening your email app with a prefilled request to Walltap Garage.");
+
+    window.location.href = `${companyDetails.emailHref}?subject=${subject}&body=${body}`;
   }
 
   return (
@@ -322,14 +344,14 @@ export function LeadCaptureForm(props: LeadCaptureFormProps) {
           ) : null}
           {!error && !statusMessage ? (
             <p className="lead-form-note">
-              Static placeholder submission only. No data is sent until a backend route
-              or form service is connected.
+              Submitting opens your email app with a prefilled sourcing request so
+              Walltap receives the full intake details.
             </p>
           ) : null}
         </div>
 
         <button className="button button-primary" type="submit">
-          {isSubmitted ? "Captured Locally" : "Submit Request"}
+          {isSubmitted ? "Email Draft Opened" : "Submit Request"}
         </button>
       </div>
     </form>

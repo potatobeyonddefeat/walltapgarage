@@ -64,6 +64,8 @@ export type InventoryVehicle = {
   category: "jdm" | "european";
   regionLabel: "JDM" | "European";
   imageClass: string;
+  imagePosition: string;
+  mobileImagePosition: string;
   transmission: string;
   mileage: string;
   location: string;
@@ -92,6 +94,8 @@ export const inventoryVehicles: InventoryVehicle[] = [
     category: "jdm",
     regionLabel: "JDM",
     imageClass: "gallery-markii",
+    imagePosition: "center center",
+    mobileImagePosition: "center center",
     transmission: "5-speed manual",
     mileage: "76k km",
     location: "Houston, TX",
@@ -118,6 +122,8 @@ export const inventoryVehicles: InventoryVehicle[] = [
     category: "jdm",
     regionLabel: "JDM",
     imageClass: "gallery-chaser",
+    imagePosition: "center center",
+    mobileImagePosition: "center center",
     transmission: "5-speed manual",
     mileage: "92k km",
     location: "Houston, TX",
@@ -144,6 +150,8 @@ export const inventoryVehicles: InventoryVehicle[] = [
     category: "jdm",
     regionLabel: "JDM",
     imageClass: "gallery-supra",
+    imagePosition: "center center",
+    mobileImagePosition: "center center",
     transmission: "6-speed manual",
     mileage: "61k km",
     location: "Japan-to-Texas sourcing",
@@ -170,6 +178,8 @@ export const inventoryVehicles: InventoryVehicle[] = [
     category: "jdm",
     regionLabel: "JDM",
     imageClass: "gallery-s15",
+    imagePosition: "center center",
+    mobileImagePosition: "center center",
     transmission: "6-speed manual",
     mileage: "88k km",
     location: "Port arrival pending",
@@ -196,6 +206,8 @@ export const inventoryVehicles: InventoryVehicle[] = [
     category: "jdm",
     regionLabel: "JDM",
     imageClass: "gallery-skyline",
+    imagePosition: "center center",
+    mobileImagePosition: "center center",
     transmission: "5-speed manual",
     mileage: "94k km",
     location: "Houston, TX",
@@ -222,6 +234,8 @@ export const inventoryVehicles: InventoryVehicle[] = [
     category: "jdm",
     regionLabel: "JDM",
     imageClass: "gallery-nsx",
+    imagePosition: "center center",
+    mobileImagePosition: "center center",
     transmission: "5-speed manual",
     mileage: "58k km",
     location: "Private seller network",
@@ -248,6 +262,8 @@ export const inventoryVehicles: InventoryVehicle[] = [
     category: "european",
     regionLabel: "European",
     imageClass: "gallery-skyline",
+    imagePosition: "center center",
+    mobileImagePosition: "center center",
     transmission: "6-speed manual",
     mileage: "79k mi",
     location: "Houston, TX",
@@ -274,6 +290,8 @@ export const inventoryVehicles: InventoryVehicle[] = [
     category: "european",
     regionLabel: "European",
     imageClass: "gallery-chaser",
+    imagePosition: "center center",
+    mobileImagePosition: "center center",
     transmission: "6-speed manual",
     mileage: "112k km",
     location: "EU purchase secured",

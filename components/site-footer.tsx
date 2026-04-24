@@ -6,6 +6,16 @@ import {
 } from "../lib/site-content";
 
 export function SiteFooter() {
+  const socialLinks = [
+    { href: companyDetails.instagramHref, label: "Instagram", icon: "instagram" },
+    { href: companyDetails.facebookHref, label: "Facebook", icon: "facebook" },
+  ].filter(
+    (link) =>
+      link.href &&
+      link.href !== "https://www.instagram.com/" &&
+      link.href !== "https://www.facebook.com/",
+  );
+
   return (
     <footer className="site-footer">
       <div className="site-footer-inner">
@@ -54,32 +64,32 @@ export function SiteFooter() {
             ))}
           </div>
 
-          <div className="footer-socials" aria-label="Social media links">
-            <a
-              aria-label="Instagram"
-              className="footer-social-link"
-              href={companyDetails.instagramHref}
-              rel="noreferrer"
-              target="_blank"
-            >
-              <svg aria-hidden="true" viewBox="0 0 24 24">
-                <rect x="3.5" y="3.5" width="17" height="17" rx="4" />
-                <circle cx="12" cy="12" r="4.25" />
-                <circle cx="17.25" cy="6.75" r="1.25" />
-              </svg>
-            </a>
-            <a
-              aria-label="Facebook"
-              className="footer-social-link"
-              href={companyDetails.facebookHref}
-              rel="noreferrer"
-              target="_blank"
-            >
-              <svg aria-hidden="true" viewBox="0 0 24 24">
-                <path d="M13.25 20.5v-7h2.6l.45-3h-3.05V8.65c0-.96.32-1.65 1.83-1.65h1.43V4.38c-.25-.03-1.1-.11-2.09-.11-2.92 0-4.66 1.53-4.66 4.69v1.54H7.5v3h2.24v7h3.51Z" />
-              </svg>
-            </a>
-          </div>
+          {socialLinks.length > 0 ? (
+            <div className="footer-socials" aria-label="Social media links">
+              {socialLinks.map((link) => (
+                <a
+                  aria-label={link.label}
+                  className="footer-social-link"
+                  href={link.href}
+                  key={link.label}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  {link.icon === "instagram" ? (
+                    <svg aria-hidden="true" viewBox="0 0 24 24">
+                      <rect x="3.5" y="3.5" width="17" height="17" rx="4" />
+                      <circle cx="12" cy="12" r="4.25" />
+                      <circle cx="17.25" cy="6.75" r="1.25" />
+                    </svg>
+                  ) : (
+                    <svg aria-hidden="true" viewBox="0 0 24 24">
+                      <path d="M13.25 20.5v-7h2.6l.45-3h-3.05V8.65c0-.96.32-1.65 1.83-1.65h1.43V4.38c-.25-.03-1.1-.11-2.09-.11-2.92 0-4.66 1.53-4.66 4.69v1.54H7.5v3h2.24v7h3.51Z" />
+                    </svg>
+                  )}
+                </a>
+              ))}
+            </div>
+          ) : null}
         </div>
 
         <div className="footer-utility">

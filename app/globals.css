@@ -213,8 +213,8 @@ button {
 }
 
 .reveal {
-  opacity: 0;
-  transform: translate3d(0, 18px, 0);
+  opacity: 1;
+  transform: none;
   transition:
     opacity 200ms ease-out,
     transform 200ms ease-out;
@@ -223,17 +223,17 @@ button {
 .reveal-left,
 .reveal-right,
 .reveal-up {
-  transform: translate3d(0, 18px, 0);
+  transform: none;
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+  transform: none;
 }
 
 main {
   display: grid;
-  gap: 56px;
+  gap: 44px;
   min-width: 0;
   padding-top: 12px;
 }
@@ -286,7 +286,8 @@ main {
 
 .hero-media-frame {
   position: relative;
-  min-height: 520px;
+  aspect-ratio: 16 / 9;
+  min-height: 0;
   border: 1px solid var(--line);
   background:
     linear-gradient(180deg, rgba(15, 23, 42, 0.08), rgba(15, 23, 42, 0.72)),
@@ -303,11 +304,11 @@ main {
 }
 
 .hero-media-quote {
-  max-width: 12ch;
+  max-width: 14ch;
   margin: 10px 0 0;
   color: #fff;
-  font-size: clamp(1.6rem, 3vw, 2.6rem);
-  line-height: 1;
+  font-size: clamp(1.15rem, 2vw, 1.7rem);
+  line-height: 1.08;
   font-weight: 700;
   letter-spacing: -0.03em;
 }
@@ -356,7 +357,7 @@ main {
 .panel-label,
 .spec-label {
   margin: 0 0 12px;
-  color: var(--muted-soft);
+  color: #5b6678;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -431,7 +432,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 28px;
+  margin-top: 22px;
 }
 
 .metrics-strip > div {
@@ -444,16 +445,16 @@ h3 {
 }
 
 .section {
-  padding: 64px 40px;
+  padding: 48px 36px;
   overflow: clip;
 }
 
 .page-intro {
-  padding-top: 48px;
+  padding-top: 36px;
 }
 
 .section-head {
-  margin-bottom: 40px;
+  margin-bottom: 28px;
 }
 
 .split-head,
@@ -487,6 +488,98 @@ h3 {
   background: var(--surface);
 }
 
+.section-intro-rail,
+.services-aside {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+  border: 1px solid var(--line);
+  padding: 24px;
+  background:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.9), rgba(255, 255, 255, 1)),
+    var(--surface);
+}
+
+.section-intro-rail {
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 24px;
+}
+
+.section-intro-copy,
+.section-intro-visual,
+.services-overview,
+.services-overview > article,
+.services-aside ul {
+  min-width: 0;
+}
+
+.section-intro-copy {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.section-intro-copy .section-head {
+  margin-bottom: 0;
+}
+
+.section-intro-copy .section-note {
+  max-width: 48ch;
+}
+
+.section-intro-visual {
+  position: relative;
+  min-height: 320px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.08), rgba(15, 23, 42, 0.68)),
+    url("https://rjdavx8ozyznxeyh.public.blob.vercel-storage.com/production/websites/uploaded-media/3tHFhXdOdbA0hYYgYloRggaSeOXXWXv2FZ6SgElTAakj13zu2WT6nGZR1QHwVcCn61K6FuB-ceRqzKJECsINak7ccOC8I3kCG83NQA.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.section-intro-visual-copy {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  display: grid;
+  gap: 8px;
+  color: #ffffff;
+}
+
+.section-intro-visual-copy p,
+.section-intro-visual-copy h2 {
+  margin: 0;
+  color: inherit;
+}
+
+.section-intro-visual-copy h2 {
+  max-width: 11ch;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 0.98;
+}
+
+.section-kicker-list,
+.services-aside ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.services-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  gap: 20px;
+}
+
+.services-aside h3,
+.services-aside p {
+  margin: 0;
+}
+
 .feature-card p:last-child,
 .founder-card p:last-child,
 .info-panel p:last-child,
@@ -515,10 +608,11 @@ h3 {
 }
 
 .inventory-card-image {
-  min-height: 220px;
+  aspect-ratio: 4 / 3;
+  min-height: 0;
   border-bottom: 1px solid var(--line);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
 }
 
 .inventory-card-body {
@@ -543,6 +637,27 @@ h3 {
 .trust-card article {
   display: grid;
   gap: 14px;
+}
+
+.service-bucket,
+.trust-card {
+  position: relative;
+}
+
+.service-bucket::before,
+.trust-card::before,
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), rgba(190, 18, 60, 0));
+}
+
+.service-bucket article,
+.trust-card article,
+.feature-card {
+  position: relative;
 }
 
 .service-bucket-link {
@@ -764,7 +879,7 @@ h3 {
 }
 
 .info-panel {
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
 .contact-grid {
@@ -1215,6 +1330,8 @@ select:focus-visible {
   .split-head,
   .cta-card,
   .process-grid,
+  .section-intro-rail,
+  .services-overview,
   .inventory-editorial,
   .contact-grid,
   .lead-form-heading,
@@ -1507,7 +1624,7 @@ select:focus-visible {
   }
 
   .hero-media-frame {
-    min-height: 240px;
+    aspect-ratio: 4 / 3;
   }
 
   .hero-media-copy {
@@ -1527,15 +1644,33 @@ select:focus-visible {
   .feature-grid,
   .feature-grid-full,
   .process-grid,
-  .new-arrivals-grid,
   .service-buckets,
   .trust-grid {
     grid-template-columns: 1fr;
     gap: 14px;
   }
 
+  .new-arrivals-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
   .section-head {
     margin-bottom: 24px;
+  }
+
+  .section-intro-rail,
+  .services-aside {
+    padding: 18px;
+  }
+
+  .section-intro-copy,
+  .section-intro-visual-copy {
+    gap: 12px;
+  }
+
+  .section-intro-visual {
+    min-height: 260px;
   }
 
   .feature-card,
@@ -1545,8 +1680,7 @@ select:focus-visible {
   .lead-form,
   .info-panel,
   .process-step,
-  .cta-card,
-  .inventory-card {
+  .cta-card {
     padding: 18px;
   }
 
@@ -1562,12 +1696,17 @@ select:focus-visible {
   }
 
   .inventory-card-body {
-    padding: 18px;
+    gap: 10px;
+    padding: 16px;
   }
 
   .inventory-card-image,
   .gallery-tile {
-    min-height: 180px;
+    min-height: 0;
+  }
+
+  .inventory-card-image {
+    aspect-ratio: 1 / 1;
   }
 
   .spec-item {
