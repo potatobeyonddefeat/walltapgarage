@@ -5,6 +5,12 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navItems } from "../lib/site-content";
 
+const mobileQuickLinks = [
+  { href: "/services#sourcing", label: "Vehicle Sourcing" },
+  { href: "/inventory", label: "Current Inventory" },
+  { href: "/services#transport", label: "Export Logistics" },
+];
+
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -111,6 +117,16 @@ export function SiteHeader() {
               </Link>
             ))}
           </nav>
+          <div className="site-header-mobile-nav-section">
+            <p className="site-header-mobile-nav-kicker">Service Links</p>
+            <nav aria-label="Mobile service links" className="site-header-mobile-nav-links">
+              {mobileQuickLinks.map((item) => (
+                <Link href={item.href} key={item.href} onClick={closeMenu}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
           <Link
             className="button button-primary site-header-mobile-nav-cta"
             href="/contact"

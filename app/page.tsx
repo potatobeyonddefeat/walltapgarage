@@ -75,12 +75,23 @@ export default function Home() {
             </Reveal>
 
             <Reveal className="hero-media" direction="left" delay={120}>
-              <div className="hero-media-frame">
-                <div className="hero-media-copy">
+              <div className="hero-media-shell">
+                <div className="hero-media-frame">
+                  <div className="hero-media-copy">
+                    <p className="panel-label">Available Now</p>
+                    <p className="hero-media-quote">
+                      Review current inventory first. Source the right car second.
+                    </p>
+                  </div>
+                </div>
+                <div className="hero-mobile-message">
                   <p className="panel-label">Available Now</p>
-                  <p className="hero-media-quote">
+                  <p className="hero-mobile-title">
                     Review current inventory first. Source the right car second.
                   </p>
+                  <Link className="button button-primary" href="/inventory">
+                    View Inventory
+                  </Link>
                 </div>
               </div>
             </Reveal>
