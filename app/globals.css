@@ -111,10 +111,10 @@ button {
 }
 
 .brand-logo {
-  width: 44px;
-  height: 40px;
+  width: 58px;
+  height: 52px;
   flex: 0 0 auto;
-  padding: 4px;
+  padding: 6px;
   border: 1px solid var(--line);
   background: #fff;
   object-fit: contain;
@@ -248,6 +248,12 @@ main {
   padding: 32px;
 }
 
+.storefront-hero {
+  background:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.92), rgba(255, 255, 255, 1)),
+    var(--surface);
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 60%) minmax(320px, 40%);
@@ -267,6 +273,11 @@ main {
   display: grid;
   align-content: end;
   padding-right: 24px;
+}
+
+.storefront-hero-copy {
+  display: grid;
+  gap: 0;
 }
 
 .hero-media {
@@ -299,6 +310,25 @@ main {
   line-height: 1;
   font-weight: 700;
   letter-spacing: -0.03em;
+}
+
+.hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.hero-highlights span {
+  min-height: 36px;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--line);
+  background: var(--surface-alt);
+  color: var(--text);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .hero-panel-footer {
@@ -449,7 +479,9 @@ h3 {
 .contact-card,
 .contact-form,
 .info-panel,
-.cta-card {
+.cta-card,
+.service-bucket,
+.trust-card {
   border: 1px solid var(--line);
   padding: 24px;
   background: var(--surface);
@@ -466,6 +498,10 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+}
+
+.new-arrivals-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .inventory-grid-full {
@@ -494,6 +530,31 @@ h3 {
 .inventory-card-actions {
   display: grid;
   gap: 10px;
+}
+
+.service-buckets,
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.service-bucket article,
+.trust-card article {
+  display: grid;
+  gap: 14px;
+}
+
+.service-bucket-link {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.service-bucket-link:hover {
+  color: var(--accent-strong);
 }
 
 .inventory-row {
@@ -1171,7 +1232,10 @@ select:focus-visible {
   .inventory-grid,
   .inventory-grid-full,
   .feature-grid,
-  .feature-grid-full {
+  .feature-grid-full,
+  .new-arrivals-grid,
+  .service-buckets,
+  .trust-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1227,8 +1291,8 @@ select:focus-visible {
   }
 
   .brand-logo {
-    width: 36px;
-    height: 32px;
+    width: 46px;
+    height: 40px;
   }
 
   .desktop-nav {
@@ -1432,7 +1496,8 @@ select:focus-visible {
 
   .hero-actions,
   .inventory-actions,
-  .cta-actions {
+  .cta-actions,
+  .hero-highlights {
     display: grid;
     gap: 10px;
   }
@@ -1461,7 +1526,10 @@ select:focus-visible {
   .inventory-grid-full,
   .feature-grid,
   .feature-grid-full,
-  .process-grid {
+  .process-grid,
+  .new-arrivals-grid,
+  .service-buckets,
+  .trust-grid {
     grid-template-columns: 1fr;
     gap: 14px;
   }
