@@ -1425,10 +1425,17 @@ select:focus-visible {
 
   .topbar {
     position: relative;
-    grid-template-columns: 1fr auto;
-    gap: 16px;
+    grid-template-columns: 48px 1fr 48px;
+    gap: 0;
     min-height: 64px;
     padding: 16px 0 12px;
+  }
+
+  .topbar::before {
+    content: "";
+    width: 48px;
+    height: 48px;
+    grid-column: 1;
   }
 
   .brand {
@@ -1452,7 +1459,9 @@ select:focus-visible {
 
   .site-header-mobile-shell {
     display: block;
-    margin-left: auto;
+    grid-column: 3;
+    justify-self: end;
+    margin-left: 0;
   }
 
   .site-header-nav-toggle {
@@ -1744,10 +1753,22 @@ select:focus-visible {
     margin-bottom: 18px;
   }
 
+  .service-lanes-head h2 {
+    font-size: clamp(1.65rem, 7vw, 2.2rem);
+    line-height: 1.12;
+  }
+
+  .service-lanes-head .section-note {
+    font-weight: 400;
+  }
+
   .section-intro-visual {
+    display: block;
     width: 100vw;
     min-height: 260px;
+    margin: 32px auto;
     margin-inline: calc(50% - 50vw);
+    background-position: center center;
   }
 
   .section-kicker-list {
@@ -1755,8 +1776,18 @@ select:focus-visible {
   }
 
   .service-lanes-list li {
+    margin-bottom: 16px;
+    padding-left: 38px;
     font-size: 0.98rem;
     line-height: 1.9;
+  }
+
+  .service-lanes-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .service-lanes-list li::before {
+    left: 6px;
   }
 
   .feature-card,
