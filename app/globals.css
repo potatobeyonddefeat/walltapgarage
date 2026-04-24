@@ -526,6 +526,19 @@ h3 {
   min-width: 0;
 }
 
+.service-lanes-head {
+  margin-bottom: 20px;
+}
+
+.service-lanes-label {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .section-intro-copy {
   display: grid;
   gap: 18px;
@@ -543,43 +556,43 @@ h3 {
 .section-intro-visual {
   position: relative;
   min-height: 320px;
-  border: 1px solid var(--line);
   background:
-    linear-gradient(180deg, rgba(15, 23, 42, 0.08), rgba(15, 23, 42, 0.68)),
     url("https://rjdavx8ozyznxeyh.public.blob.vercel-storage.com/production/websites/uploaded-media/3tHFhXdOdbA0hYYgYloRggaSeOXXWXv2FZ6SgElTAakj13zu2WT6nGZR1QHwVcCn61K6FuB-ceRqzKJECsINak7ccOC8I3kCG83NQA.jpg");
   background-size: cover;
   background-position: center;
 }
 
-.section-intro-visual-copy {
-  position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 18px;
-  display: grid;
-  gap: 8px;
-  color: #ffffff;
-}
-
-.section-intro-visual-copy p,
-.section-intro-visual-copy h2 {
-  margin: 0;
-  color: inherit;
-}
-
-.section-intro-visual-copy h2 {
-  max-width: 11ch;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  line-height: 0.98;
-}
-
 .section-kicker-list,
 .services-aside ul {
   display: grid;
-  gap: 10px;
+  gap: 16px;
   margin: 0;
-  padding-left: 18px;
+  padding-left: 0;
+  list-style: none;
   color: var(--muted);
+}
+
+.service-lanes-copy {
+  gap: 0;
+}
+
+.service-lanes-list li {
+  position: relative;
+  padding-left: 28px;
+  line-height: 1.8;
+}
+
+.service-lanes-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72rem;
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid var(--accent);
+  border-top: 0;
+  border-left: 0;
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .services-overview {
@@ -1724,16 +1737,26 @@ select:focus-visible {
 
   .section-intro-rail,
   .services-aside {
-    padding: 18px;
+    padding: 0;
   }
 
-  .section-intro-copy,
-  .section-intro-visual-copy {
-    gap: 12px;
+  .service-lanes-head {
+    margin-bottom: 18px;
   }
 
   .section-intro-visual {
+    width: 100vw;
     min-height: 260px;
+    margin-inline: calc(50% - 50vw);
+  }
+
+  .section-kicker-list {
+    gap: 18px;
+  }
+
+  .service-lanes-list li {
+    font-size: 0.98rem;
+    line-height: 1.9;
   }
 
   .feature-card,

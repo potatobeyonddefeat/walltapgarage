@@ -114,48 +114,28 @@ export default function Home() {
         </section>
 
         <section className="section">
-          <div className="section-intro-rail">
-            <div className="section-intro-copy">
-              <div className="section-head split-head">
-                <div>
-                  <p className="eyebrow">Services</p>
-                  <h2>Three direct ways to work with Walltap Garage.</h2>
-                </div>
-                <p className="section-note">
-                  The storefront is built around the actual business: sourcing the right
-                  vehicle, selling current inventory, and managing the import path with
-                  fewer surprises.
-                </p>
-              </div>
-
-              <ul className="section-kicker-list">
-                <li>Start with current inventory when the right fit is already on the ground.</li>
-                <li>Open a sourcing brief when the exact chassis, trim, or mileage matters.</li>
-                <li>Track logistics and delivery through documented checkpoints instead of guesswork.</li>
-              </ul>
-            </div>
-
-            <div className="section-intro-visual" aria-hidden="true">
-              <div className="section-intro-visual-copy">
-                <p className="panel-label">Buyer support</p>
-                <h2>Inventory, sourcing, and shipping in one operating lane.</h2>
-                <p>
-                  Serious buyers get a cleaner handoff from inquiry to delivery, whether the car is
-                  ready now or still needs to be found.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="section-head split-head">
+          <div className="section-head service-lanes-head">
             <div>
-              <p className="eyebrow">Service lanes</p>
+              <p className="service-lanes-label">Service Lanes</p>
               <h2>Pick the path that matches where you are in the buying process.</h2>
             </div>
             <p className="section-note">
               Each route keeps the next action obvious, whether you are reviewing stock,
               approving a sourced car, or coordinating transport.
             </p>
+          </div>
+
+          <div className="section-intro-rail">
+            <div className="section-intro-visual" aria-hidden="true">
+            </div>
+
+            <div className="section-intro-copy service-lanes-copy">
+              <ul className="section-kicker-list service-lanes-list">
+                <li>Start with current inventory when the right fit is already on the ground.</li>
+                <li>Open a sourcing brief when the exact chassis, trim, or mileage matters.</li>
+                <li>Track logistics and delivery through documented checkpoints instead of guesswork.</li>
+              </ul>
+            </div>
           </div>
 
           <div className="service-buckets">
