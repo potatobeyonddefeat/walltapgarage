@@ -330,18 +330,18 @@ main {
   border: 1px solid rgba(15, 23, 42, 0.28);
   box-shadow: var(--shadow-cinematic);
   background:
-    linear-gradient(180deg, rgba(15, 23, 42, 0.01) 28%, rgba(15, 23, 42, 0.68) 100%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.01) 32%, rgba(15, 23, 42, 0.62) 100%),
     radial-gradient(circle at 72% 18%, rgba(255, 255, 255, 0.18), transparent 32%),
     url("https://rjdavx8ozyznxeyh.public.blob.vercel-storage.com/production/websites/uploaded-media/3tHFhXdOdbA0hYYgYloRggaSeOXXWXv2FZ6SgElTAakj13zu2WT6nGZR1QHwVcCn61K6FuB-ceRqzKJECsINak7ccOC8I3kCG83NQA.jpg");
   background-size: cover;
-  background-position: center 56%;
+  background-position: center 54%;
 }
 
 .hero-media-copy {
   position: absolute;
-  left: clamp(22px, 4vw, 34px);
-  right: clamp(22px, 4vw, 34px);
-  bottom: clamp(22px, 4vw, 34px);
+  left: clamp(26px, 4.5vw, 40px);
+  right: clamp(26px, 4.5vw, 40px);
+  bottom: clamp(26px, 4.5vw, 40px);
   max-width: 19rem;
 }
 
@@ -703,6 +703,7 @@ h3 {
 
 .new-arrivals-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
 }
 
 .inventory-grid-full {
@@ -711,6 +712,7 @@ h3 {
 
 .inventory-card {
   display: grid;
+  grid-template-rows: auto 1fr;
   border: 1px solid var(--line);
   background: var(--surface);
   overflow: hidden;
@@ -745,13 +747,16 @@ h3 {
 
 .inventory-card-body {
   display: grid;
-  gap: 14px;
-  padding: 20px;
+  gap: 16px;
+  align-content: start;
+  padding: 22px;
 }
 
 .inventory-card-actions {
   display: grid;
   gap: 10px;
+  align-self: end;
+  margin-top: auto;
 }
 
 .service-buckets,
@@ -1341,6 +1346,7 @@ h3 {
 .footer-contact-card {
   display: grid;
   gap: 6px;
+  min-width: 0;
   min-height: 92px;
   padding: 18px;
   border: 1px solid var(--line);
@@ -1360,12 +1366,14 @@ h3 {
 
 .footer-contact-value {
   color: var(--text);
-  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  min-width: 0;
+  font-size: clamp(0.86rem, 1.1vw, 1rem);
   font-weight: 600;
   line-height: 1.5;
   max-width: 100%;
   overflow-wrap: anywhere;
   word-break: break-word;
+  hyphens: auto;
 }
 
 .footer-nav-grid {
