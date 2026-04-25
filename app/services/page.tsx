@@ -13,7 +13,7 @@ export default function ServicesPage() {
   return (
     <PageShell>
       <main>
-        <section className="section page-intro">
+        <section className="section page-intro services-page-intro">
           <div className="section-intro-rail">
             <div className="section-intro-copy">
               <div className="section-head split-head">
