@@ -746,16 +746,30 @@ h3 {
 }
 
 .inventory-card-body {
-  display: grid;
-  gap: 16px;
-  align-content: start;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
   padding: 22px;
+}
+
+.inventory-card-fields {
+  display: grid;
+  gap: 14px;
+}
+
+.inventory-field {
+  display: grid;
+  gap: 4px;
+}
+
+.inventory-field .inventory-spec-label,
+.inventory-field .inventory-spec-value {
+  margin: 0;
 }
 
 .inventory-card-actions {
   display: grid;
   gap: 10px;
-  align-self: end;
   margin-top: auto;
 }
 

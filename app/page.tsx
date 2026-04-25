@@ -174,12 +174,20 @@ export default function Home() {
                   style={{ backgroundPosition: vehicle.imagePosition }}
                 />
                 <div className="inventory-card-body">
-                  <p className="inventory-spec-label">Year</p>
-                  <p className="inventory-spec-value">{vehicle.year}</p>
-                  <p className="inventory-spec-label">Make</p>
-                  <p className="inventory-spec-value">{vehicle.make}</p>
-                  <p className="inventory-spec-label">Model</p>
-                  <h3>{vehicle.model}</h3>
+                  <div className="inventory-card-fields">
+                    <div className="inventory-field">
+                      <p className="inventory-spec-label">Year</p>
+                      <p className="inventory-spec-value">{vehicle.year}</p>
+                    </div>
+                    <div className="inventory-field">
+                      <p className="inventory-spec-label">Make</p>
+                      <p className="inventory-spec-value">{vehicle.make}</p>
+                    </div>
+                    <div className="inventory-field">
+                      <p className="inventory-spec-label">Model</p>
+                      <h3>{vehicle.model}</h3>
+                    </div>
+                  </div>
                   <div className="inventory-card-actions">
                     <Link className="button button-primary card-button" href="/inventory">
                       View Details
