@@ -278,8 +278,10 @@ export function InventoryBrowser({
                     "--vehicle-mobile-position": vehicle.mobileImagePosition,
                   } as CSSProperties
                 }
-              >
-                <div className={styles.mediaInner}>
+              />
+
+              <div className={styles.cardBody}>
+                <div className={styles.cardSummary}>
                   <div className={styles.mediaTopline}>
                     <span className={styles.badge}>{vehicle.regionLabel}</span>
                     <span className={styles.badge}>{vehicle.status}</span>
@@ -294,9 +296,6 @@ export function InventoryBrowser({
                     {vehicle.model} · {vehicle.body} · {getPriceBand(vehicle.priceValue)}
                   </p>
                 </div>
-              </div>
-
-              <div className={styles.cardBody}>
                 <div className={styles.priceRow}>
                   <div className={styles.priceBlock}>
                     <p className={styles.priceLabel}>As listed</p>

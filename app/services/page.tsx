@@ -34,16 +34,7 @@ export default function ServicesPage() {
               </ul>
             </div>
 
-            <div className="section-intro-visual" aria-hidden="true">
-              <div className="section-intro-visual-copy">
-                <p className="panel-label">Process-led support</p>
-                <h2>Walltap runs the buying path with clearer checkpoints.</h2>
-                <p>
-                  Buyers see what is being sourced, what has been approved, and what happens next
-                  before the handoff gets complicated.
-                </p>
-              </div>
-            </div>
+            <div className="section-intro-visual" aria-hidden="true" />
           </div>
 
           <div className="services-overview">

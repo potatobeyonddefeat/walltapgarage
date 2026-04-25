@@ -330,7 +330,6 @@ main {
   border: 1px solid rgba(15, 23, 42, 0.28);
   box-shadow: var(--shadow-cinematic);
   background:
-    linear-gradient(180deg, rgba(15, 23, 42, 0.01) 32%, rgba(15, 23, 42, 0.62) 100%),
     radial-gradient(circle at 72% 18%, rgba(255, 255, 255, 0.18), transparent 32%),
     url("https://rjdavx8ozyznxeyh.public.blob.vercel-storage.com/production/websites/uploaded-media/3tHFhXdOdbA0hYYgYloRggaSeOXXWXv2FZ6SgElTAakj13zu2WT6nGZR1QHwVcCn61K6FuB-ceRqzKJECsINak7ccOC8I3kCG83NQA.jpg");
   background-size: cover;
@@ -613,12 +612,7 @@ h3 {
 }
 
 .section-intro-visual::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.52), transparent 56%),
-    linear-gradient(0deg, rgba(15, 23, 42, 0.66), transparent 60%);
+  content: none;
 }
 
 .section-intro-visual-copy {
