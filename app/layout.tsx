@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Barlow_Condensed, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -8,6 +8,12 @@ const bodyFont = Inter({
   subsets: ["latin"],
   variable: "--font-body",
   weight: ["400", "500", "600", "700"],
+});
+
+const displayFont = Barlow_Condensed({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["600", "700"],
 });
 
 const siteUrl = "https://walltapgarage.com";
@@ -113,7 +119,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={bodyFont.variable}>
+      <body className={`${bodyFont.variable} ${displayFont.variable}`}>
         {children}
         <script
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
