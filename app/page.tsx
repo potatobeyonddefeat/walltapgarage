@@ -201,7 +201,7 @@ export default function Home() {
         <section className="section">
           <div className="section-head split-head">
             <div>
-              <p className="eyebrow">Why Walltap?</p>
+              <p className="eyebrow">Why work with us?</p>
               <h2>Trust signals buyers look for before they commit.</h2>
             </div>
             <p className="section-note">
