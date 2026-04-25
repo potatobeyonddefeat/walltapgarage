@@ -113,7 +113,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section section-soft service-lanes-section">
+        <section className="section">
           <div className="section-head service-lanes-head">
             <div>
               <p className="service-lanes-label">Service Lanes</p>
@@ -154,7 +154,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section section-dark arrivals-section">
+        <section className="section">
           <div className="section-head split-head">
             <div>
               <p className="eyebrow">New Arrivals</p>
@@ -197,7 +197,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section trust-section">
+        <section className="section">
           <div className="section-head split-head">
             <div>
               <p className="eyebrow">Why Walltap?</p>

@@ -22,7 +22,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
   return (
     <PageShell>
       <main>
-        <section className="section page-intro contact-section">
+        <section className="section page-intro">
           <div className="section-head split-head">
             <div>
               <p className="eyebrow">Contact</p>
